@@ -52,7 +52,6 @@ public class StoreRedirectPlugin implements MethodCallHandler, FlutterPlugin, Ac
     if (call.method.equals("redirect")) {
 
       String appId = (String) call.argument("android_id");
-      boolean review = (boolean) call.argument("review");
       String appPackageName;
 
       if (appId != null) {
@@ -61,13 +60,7 @@ public class StoreRedirectPlugin implements MethodCallHandler, FlutterPlugin, Ac
         appPackageName = this.activity.getPackageName();
       }
 
-      Intent marketIntent;
-      if (review) {
-        marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName + "&reviewId=0"));
-      } else {
-        marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName));
-      }
-
+      Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName));
       marketIntent.addFlags(
           Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
       this.activity.startActivity(marketIntent);

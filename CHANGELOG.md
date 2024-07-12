@@ -1,3 +1,7 @@
+## 2.0.3
+
+* Added optional bool review field to redirect iOS users to App Store Review page
+
 ## 2.0.2
 
 * Added support for Gradle 8.2
