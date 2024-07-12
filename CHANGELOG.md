@@ -1,6 +1,6 @@
 ## 2.0.3
 
-* Added optional bool review field to redirect iOS users to App Store Review page
+* Added optional bool review field to redirect iOS users to App Store iOSAppId Reviews page
 
 ## 2.0.2
 

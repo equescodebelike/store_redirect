@@ -5,6 +5,8 @@ class StoreRedirect {
   static const MethodChannel _channel = const MethodChannel('store_redirect');
 
   /// Note: It will not work with the iOS Simulator
+  /// 
+  /// [review] field set to true redirects users straight to App Store iOSAppId Reviews page
   static Future<void> redirect(
       {String? androidAppId, String? iOSAppId, bool review = false}) async {
     await _channel.invokeMethod('redirect',
